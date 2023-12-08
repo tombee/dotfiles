@@ -22,6 +22,10 @@ for configdir in ~/.dotfiles/config/*; do
 	ln -snf $configdir ~/.config/$(basename "$configdir")
 done
 
+for shellfile in ~/.dotfiles/shell/*; do
+	ln -snf $configdir ~/.$(basename "$shellfile")
+done
+
 defaults write -g AppleFontSmoothing -int 0
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

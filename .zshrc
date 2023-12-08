@@ -1,0 +1,1 @@
+/Users/tbarlow/.zshrc

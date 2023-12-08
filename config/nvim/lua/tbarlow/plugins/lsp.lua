@@ -66,7 +66,7 @@ return {
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = {'rust_analyzer', 'golangci_lint_ls', 'gopls', 'sumneko_lua'},
+        ensure_installed = {'rust_analyzer', 'golangci_lint_ls', 'gopls'},
         handlers = {
           lsp_zero.default_setup,
           lua_ls = function()
