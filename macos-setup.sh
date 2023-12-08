@@ -23,7 +23,7 @@ for configdir in ~/.dotfiles/config/*; do
 done
 
 for shellfile in ~/.dotfiles/shell/*; do
-	ln -snf $configdir ~/.$(basename "$shellfile")
+	ln -snf $shellfile ~/.$(basename "$shellfile")
 done
 
 defaults write -g AppleFontSmoothing -int 0
