@@ -8,6 +8,7 @@ brew install \
 	fd \
 	font-monaspace \
 	git \
+	lazygit \
 	neovim \
 	ripgrep \
 	tmux \
