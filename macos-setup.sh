@@ -5,12 +5,14 @@ brew tap homebrew/cask-fonts
 brew install \
 	alacritty \
 	docker \
+	fd \
 	font-monaspace \
 	git \
 	neovim \
-    ripgrep \
+	ripgrep \
 	tmux \
 	visual-studio-code \
+	wget \
 	zsh
 
 chsh -s /bin/zsh

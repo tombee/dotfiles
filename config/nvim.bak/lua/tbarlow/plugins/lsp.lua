@@ -63,6 +63,7 @@ return {
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
         lsp_zero.default_keymaps({buffer = bufnr})
+        vim.keymap.set("n", "<leader>vca", function () vim.lsp.buf.code_action() end, opts)
       end)
 
       require('mason-lspconfig').setup({
