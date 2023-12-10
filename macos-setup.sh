@@ -4,6 +4,7 @@ brew tap homebrew/cask-fonts
 
 brew install \
 	alacritty \
+	discord \
 	docker \
 	fd \
 	font-monaspace \
