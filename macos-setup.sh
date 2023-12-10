@@ -8,6 +8,8 @@ brew install \
 	fd \
 	font-monaspace \
 	git \
+	koekeishiya/formulae/yabai \
+	koekeishiya/formulae/skhd \
 	lazygit \
 	neovim \
 	ripgrep \
