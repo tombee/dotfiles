@@ -8,12 +8,14 @@ brew install \
 	fd \
 	font-monaspace \
 	git \
+	jq \
 	koekeishiya/formulae/yabai \
 	koekeishiya/formulae/skhd \
 	lazygit \
 	neovim \
 	ripgrep \
 	tmux \
+	spotify \
 	visual-studio-code \
 	wget \
 	zsh
