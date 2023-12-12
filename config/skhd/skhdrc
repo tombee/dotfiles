@@ -25,14 +25,6 @@ shift + cmd + ctrl - j : yabai -m window --warp south
 shift + cmd + ctrl - k : yabai -m window --warp north
 shift + cmd + ctrl - l : yabai -m window --warp east
 
-# cmd - s : yabai -m window --toggle 
-cmd - s : yabai -m window --toggle sticky;\
-          yabai -m window --toggle topmost;\
-          yabai -m window --toggle pip
-
-# toggle padding and gap
-cmd - g : yabai -m space --toggle padding; yabai -m space --toggle gap
-
 # toggle window split type
 cmd - e : yabai -m window --toggle split
 
