@@ -25,13 +25,16 @@ chsh -s /bin/zsh
 ln -snf ~/.dotfiles/zshrc ~/.zshrc
 
 mkdir -p ~/.config
-for configdir in ~/.dotfiles/config/*; do
-	ln -snf $configdir ~/.config/$(basename "$configdir")
+
+dir=$(pwd)
+for configdir in ${dir}/config/*; do
+        ln -snf $configdir ~/.config/$(basename "$configdir")
 done
 
-for shellfile in ~/.dotfiles/shell/*; do
-	ln -snf $shellfile ~/.$(basename "$shellfile")
+for shellfile in ${dir}/shell/*; do
+        ln -snf $shellfile ~/.$(basename "$shellfile")
 done
+
 
 defaults write -g AppleFontSmoothing -int 0
 
