@@ -7,7 +7,6 @@ brew install \
 	discord \
 	docker \
 	fd \
-	font-monaspace \
 	git \
 	jq \
 	koekeishiya/formulae/yabai \
