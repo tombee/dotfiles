@@ -9,6 +9,7 @@ import:
   # - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
 
 window:
+  option_as_alt: OnlyLeft 
   decorations: buttonless
   dynamic_title: true
   opacity: 0.95
