@@ -16,6 +16,7 @@ brew install \
 	ripgrep \
 	tmux \
 	spotify \
+	stats \
 	visual-studio-code \
 	wget \
 	zsh
@@ -28,13 +29,12 @@ mkdir -p ~/.config
 
 dir=$(pwd)
 for configdir in ${dir}/config/*; do
-        ln -snf $configdir ~/.config/$(basename "$configdir")
+	ln -snf $configdir ~/.config/$(basename "$configdir")
 done
 
 for shellfile in ${dir}/shell/*; do
-        ln -snf $shellfile ~/.$(basename "$shellfile")
+	ln -snf $shellfile ~/.$(basename "$shellfile")
 done
-
 
 defaults write -g AppleFontSmoothing -int 0
 
