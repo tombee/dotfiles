@@ -9,8 +9,8 @@
 # A tiling window manager for macOS
 # https://github.com/koekeishiya/yabai
 
-sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 
 # global settings
 yabai -m config mouse_follows_focus on
@@ -50,5 +50,7 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Stats$" manage=off
+yabai -m rule --add app="^AdBlock$" manage=off
+yabai -m rule --add app="^Fantasy Football$" manage=off
 
 echo "yabai configuration loaded.."

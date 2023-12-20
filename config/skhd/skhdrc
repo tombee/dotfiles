@@ -56,11 +56,11 @@ cmd - 8 : yabai -m space --focus 8
 cmd - 9 : yabai -m space --focus 9
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-shift + cmd - n : yabai -m space --create && \
+shift + cmd - 0 : yabai -m space --create && \
                    index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
                    yabai -m window --space "${index}" && \
                    yabai -m space --focus "${index}"
 
 # send window to monitor and follow focus
-shift + cmd - n : yabai -m window --display next; yabai -m display --focus next
-shift + cmd - p : yabai -m window --display previous; yabai -m display --focus previous
+# shift + cmd - n : yabai -m window --display next; yabai -m display --focus next
+# shift + cmd - p : yabai -m window --display previous; yabai -m display --focus previous

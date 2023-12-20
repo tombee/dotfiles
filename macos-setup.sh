@@ -7,13 +7,18 @@ brew install \
 	discord \
 	docker \
 	fd \
+	gimp \
 	git \
+	gnu-sed \
+	google-drive \
 	jq \
 	koekeishiya/formulae/yabai \
 	koekeishiya/formulae/skhd \
 	lazygit \
 	neovim \
+	obsidian \
 	ripgrep \
+	steam \
 	tmux \
 	spotify \
 	stats \
