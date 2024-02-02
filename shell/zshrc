@@ -74,12 +74,19 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+
+[[ -r ~/.oh-my-zsh/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.oh-my-zsh/znap
+source ~/.oh-my-zsh/znap/znap.zsh
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git web-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(aws rust golang tmux git web-search zsh-autosuggestions zsh-syntax-highlighting)
+znap source marlonrichert/zsh-autocomplete
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,3 +122,5 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^ ' autosuggest-accept
 
 alias vim="nvim"
+
+complete -C $(which aws_completer) aws

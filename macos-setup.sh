@@ -16,6 +16,7 @@ brew install \
 	koekeishiya/formulae/skhd \
 	lazygit \
 	neovim \
+	npm \
 	obsidian \
 	ripgrep \
 	steam \
@@ -25,6 +26,11 @@ brew install \
 	visual-studio-code \
 	wget \
 	zsh
+
+npm install -g \
+	typescript \
+	neovim \
+	aws-cdk
 
 chsh -s /bin/zsh
 
