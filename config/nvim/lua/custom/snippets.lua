@@ -1,8 +1,5 @@
 local ls = require "luasnip"
 
--- TODO: Think about `locally_jumpable`, etc.
--- Might be nice to send PR to luasnip to use filters instead for these functions ;)
-
 vim.snippet.expand = ls.lsp_expand
 
 ---@diagnostic disable-next-line: duplicate-set-field
@@ -40,10 +37,6 @@ ls.config.set_config {
   updateevents = "TextChanged,TextChangedI",
   override_builtin = true,
 }
-
-for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/custom/snippets/*.lua", true)) do
-  loadfile(ft_path)()
-end
 
 vim.keymap.set({ "i", "s" }, "<c-k>", function()
   return vim.snippet.active { direction = 1 } and vim.snippet.jump(1)

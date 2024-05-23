@@ -1,0 +1,37 @@
+#!/bin/sh
+# Toggle dark and light themes for tmux, alacritty, nvim.
+
+XDG_CONFIG_HOME="${HOME}/.config"
+LIGHTTHEME="latte"
+DARKTHEME="mocha"
+VIMCONF="${XDG_CONFIG_HOME}/nvim/plugin/colourscheme.lua"
+ALACRITTYCONF="${XDG_CONFIG_HOME}/alacritty/alacritty.toml"
+TMUXCONF="${XDG_CONFIG_HOME}/tmux/tmux.conf"
+CURRENT_MODE=$(defaults read -g AppleInterfaceStyle 2>/dev/null || echo "Light")
+
+switch_vim_theme() {
+	tmux list-panes -a -F '#{pane_id} #{pane_current_command}' |
+		grep vim | # this captures vim and nvim
+		cut -d ' ' -f 1 |
+		xargs -I PANE tmux send-keys -t PANE ESCAPE \
+			:source $VIMCONF ENTER
+}
+
+# Toggle logic based on current mode
+if [ "$CURRENT_MODE" = "Dark" ]; then
+	osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
+	for f in "$ALACRITTYCONF" "$TMUXCONF" "$VIMCONF"; do
+		sed -i '' "s/${DARKTHEME}/${LIGHTTHEME}/" ${f}
+	done
+	switch_vim_theme
+elif [ "$CURRENT_MODE" = "Light" ]; then
+	osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
+	for f in "$ALACRITTYCONF" "$TMUXCONF" "$VIMCONF"; do
+		sed -i '' "s/${LIGHTTHEME}/${DARKTHEME}/" ${f}
+	done
+	switch_vim_theme
+else
+	echo "Unknown current mode: $CURRENT_MODE"
+fi
+
+tmux source-file "$TMUXCONF"
