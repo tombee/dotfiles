@@ -4,26 +4,24 @@ brew tap homebrew/cask-fonts
 
 brew install \
 	alacritty \
+	bat \
 	discord \
-	docker \
 	fd \
-	gimp \
+	fzf \
 	git \
 	gnu-sed \
 	google-drive \
 	jq \
-	koekeishiya/formulae/yabai \
-	koekeishiya/formulae/skhd \
 	lazygit \
 	neovim \
 	npm \
 	obsidian \
 	ripgrep \
 	steam \
+	tldr \
 	tmux \
 	spotify \
 	stats \
-	visual-studio-code \
 	wget \
 	zsh
 
@@ -48,5 +46,3 @@ for shellfile in ${dir}/shell/*; do
 done
 
 defaults write -g AppleFontSmoothing -int 0
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
