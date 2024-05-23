@@ -49,13 +49,6 @@ return {
         },
         lua_ls = true,
         rust_analyzer = true,
-        svelte = true,
-        templ = true,
-        cssls = true,
-
-        -- Probably want to disable formatting for this lang server
-        tsserver = true,
-
         jsonls = {
           settings = {
             json = {
@@ -76,35 +69,6 @@ return {
             },
           },
         },
-
-        ocamllsp = {
-          manual_install = true,
-          settings = {
-            codelens = { enable = true },
-            inlayHints = { enable = true },
-          },
-
-          filetypes = {
-            "ocaml",
-            "ocaml.interface",
-            "ocaml.menhir",
-            "ocaml.cram",
-          },
-
-          -- TODO: Check if i still need the filtypes stuff i had before
-        },
-
-        lexical = {
-          cmd = { "/home/tjdevries/.local/share/nvim/mason/bin/lexical", "server" },
-          root_dir = require("lspconfig.util").root_pattern { "mix.exs" },
-        },
-
-        clangd = {
-          -- TODO: Could include cmd, but not sure those were all relevant flags.
-          --    looks like something i would have added while i was floundering
-          init_options = { clangdFileStatus = true },
-          filetypes = { "c" },
-        },
       }
 
       local servers_to_install = vim.tbl_filter(function(key)
@@ -121,7 +85,6 @@ return {
         "stylua",
         "lua_ls",
         "delve",
-        -- "tailwind-language-server",
       }
 
       vim.list_extend(ensure_installed, servers_to_install)
