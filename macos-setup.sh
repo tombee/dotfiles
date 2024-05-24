@@ -16,6 +16,8 @@ brew install \
 	neovim \
 	npm \
 	obsidian \
+	pyenv \
+	pyenv-virtualenv \
 	ripgrep \
 	steam \
 	tldr \
