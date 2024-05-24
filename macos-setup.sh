@@ -12,6 +12,7 @@ brew install \
 	gnu-sed \
 	google-drive \
 	jq \
+	just \
 	lazygit \
 	neovim \
 	npm \
