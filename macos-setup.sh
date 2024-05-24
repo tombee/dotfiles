@@ -6,6 +6,7 @@ brew install \
 	alacritty \
 	bat \
 	discord \
+	eza \
 	fd \
 	fzf \
 	git \
@@ -30,7 +31,6 @@ brew install \
 
 npm install -g \
 	typescript \
-	neovim \
 	aws-cdk
 
 chsh -s /bin/zsh
