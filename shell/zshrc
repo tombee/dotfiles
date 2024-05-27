@@ -121,3 +121,6 @@ _fzf_compgen_dir() {
 }
 
 source "${HOME}/.dotfiles/shell/fzf-git.sh/fzf-git.sh"
+
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line

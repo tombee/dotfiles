@@ -107,6 +107,9 @@ return {
         "stylua",
         "lua_ls",
         "delve",
+        "ruff",
+        "basedpyright",
+        "isort",
       }
 
       vim.list_extend(ensure_installed, servers_to_install)
@@ -153,7 +156,7 @@ return {
       require("conform").setup {
         formatters_by_ft = {
           lua = { "stylua" },
-          python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+          python = { "ruff_fix", "ruff_format", "ruff_organize_imports", "isort" },
         },
       }
 
